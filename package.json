@@ -1,0 +1,16 @@
+{
+  "name": "airsonos",
+  "version": "0.0.1",
+  "author": "Stephen Wan <stephen@stephenwan.net>",
+  "description": "AirPlay server for streaming to a Sonos system",
+  "contributors": [ 
+    {
+      "name": "Stephen Wan",
+      "email": "stephen@stephenwan.net"
+    } 
+  ],
+  "dependencies" : {
+    "mdns" :  "*"
+  },
+  "license": "MIT"
+}
