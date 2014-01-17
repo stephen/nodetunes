@@ -11,7 +11,9 @@
   ],
   "dependencies" : {
     "mdns2" : "*",
-    "ursa"  : "*"
+    "ursa"  : "*",
+    "ip"    : "*",
+    "getmac"  : "*"
   },
   "license": "MIT"
 }
