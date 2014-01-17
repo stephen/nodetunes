@@ -8,7 +8,6 @@ lcov.info
 *.pid
 *.gz
 *.pcap
-*.key
 
 pids
 logs
