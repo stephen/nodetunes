@@ -10,7 +10,8 @@
     } 
   ],
   "dependencies" : {
-    "mdns2" :  "*"
+    "mdns2" : "*",
+    "ursa"  : "*"
   },
   "license": "MIT"
 }
