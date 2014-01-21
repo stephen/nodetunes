@@ -12,6 +12,10 @@
   "scripts": {
     "test": "node ./test/server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StephenCWan/nodetunes.git"
+  },
   "dependencies" : {
     "mdns2" : "*",
     "ursa"  : "*",

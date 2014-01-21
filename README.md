@@ -1,4 +1,8 @@
-AirSonos WIP
+NodeTunes
 ============
 
-node.js package for using AirPlay to Sonos device
+AirTunes v2 implementation in node.js
+
+```npm install
+npm test
+```
