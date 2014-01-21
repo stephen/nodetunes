@@ -1,19 +1,21 @@
 {
-  "name": "airsonos",
+  "name": "nodetunes",
   "version": "0.0.1",
   "author": "Stephen Wan <stephen@stephenwan.net>",
-  "description": "AirPlay server for streaming to a Sonos system",
+  "description": "AirTunes v2 Music Server",
   "contributors": [ 
     {
       "name": "Stephen Wan",
       "email": "stephen@stephenwan.net"
     } 
   ],
+  "scripts": {
+    "test": "node ./test/server.js"
+  },
   "dependencies" : {
     "mdns2" : "*",
     "ursa"  : "*",
-    "ip"    : "*",
-    "getmac"  : "*"
+    "ip"    : "*"
   },
   "license": "MIT"
 }
