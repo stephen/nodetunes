@@ -17,5 +17,8 @@
     "ursa"  : "*",
     "ip"    : "*"
   },
+  "devDependencies" : {
+    "speaker" : "*"
+  },
   "license": "MIT"
 }
