@@ -20,7 +20,8 @@
     "mdns2" : "*",
     "ursa"  : "*",
     "ip"    : "*",
-    "priorityqueuejs" : "*"
+    "priorityqueuejs" : "*",
+    "portastic" : "*"
   },
   "devDependencies" : {
     "speaker" : "*"
