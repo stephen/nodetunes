@@ -19,7 +19,8 @@
   "dependencies" : {
     "mdns2" : "*",
     "ursa"  : "*",
-    "ip"    : "*"
+    "ip"    : "*",
+    "priorityqueuejs" : "*"
   },
   "devDependencies" : {
     "speaker" : "*"
