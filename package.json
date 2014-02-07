@@ -21,7 +21,8 @@
     "ursa"  : "*",
     "ip"    : "*",
     "priorityqueuejs" : "*",
-    "portastic" : "*"
+    "portastic" : "*",
+    "randomstring" : "*"
   },
   "devDependencies" : {
     "speaker" : "*"
