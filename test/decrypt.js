@@ -1,3 +1,5 @@
+"use strict";
+
 var ursa = require('ursa');
 var fs = require('fs');
 var readline = require('readline');
