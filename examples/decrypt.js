@@ -12,8 +12,8 @@ var rl = readline.createInterface({
 
 rl.on('line', function (data) {
 
-	var privkey = ursa.createPrivateKey(fs.readFileSync('private.key'));
-	var response = privkey.publicDecrypt(data, 'base64', 'hex');
+  var privkey = ursa.createPrivateKey(fs.readFileSync('private.key'));
+  var response = privkey.publicDecrypt(data, 'base64', 'hex');
 
-	console.log(response);
+  console.log(response);
 });

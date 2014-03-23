@@ -3,11 +3,11 @@
   "version": "0.0.4",
   "author": "Stephen Wan <stephen@stephenwan.net>",
   "description": "AirTunes v2 Music Server",
-  "contributors": [ 
+  "contributors": [
     {
       "name": "Stephen Wan",
       "email": "stephen@stephenwan.net"
-    } 
+    }
   ],
   "scripts": {
     "test": "node ./test/server.js"
@@ -16,17 +16,18 @@
     "type": "git",
     "url": "https://github.com/StephenCWan/nodetunes.git"
   },
-  "dependencies" : {
-    "mdns2" : "*",
-    "ursa"  : "*",
-    "ip"    : "*",
-    "priorityqueuejs" : "*",
-    "portastic" : "*",
-    "randomstring" : "*",
-    "httplike" : "0.0.1"
+  "dependencies": {
+    "mdns2": "*",
+    "ursa": "*",
+    "ip": "*",
+    "priorityqueuejs": "*",
+    "portastic": "*",
+    "randomstring": "*",
+    "httplike": "0.0.1",
+    "random-mac": "0.0.4"
   },
-  "devDependencies" : {
-    "speaker" : "*"
+  "devDependencies": {
+    "speaker": "*"
   },
   "license": "MIT"
 }
