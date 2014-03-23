@@ -22,7 +22,8 @@
     "ip"    : "*",
     "priorityqueuejs" : "*",
     "portastic" : "*",
-    "randomstring" : "*"
+    "randomstring" : "*",
+    "httplike" : "*"
   },
   "devDependencies" : {
     "speaker" : "*"
