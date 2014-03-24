@@ -11,7 +11,3 @@ var speaker = new Speaker({
 var server = new AirTunesServer(speaker);
 
 server.start();
-server.on('volumeChange', function(vol) {
-	console.log(vol);
-	console.log(Math.floor((144 - vol)/144 * 100));
-});
