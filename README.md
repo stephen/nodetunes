@@ -8,4 +8,11 @@ npm install
 npm test
 ```
 
-See ```test/server.js``` for example usage.
+See ```examples/server.js``` for example usage.
+
+Changelog
+---------
+
+## 0.0.7
+- Changed output audio stream pattern to better match callback pattern. See new ```examples/server.js```
+

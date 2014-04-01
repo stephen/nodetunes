@@ -1,6 +1,6 @@
 {
   "name": "nodetunes",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Stephen Wan <stephen@stephenwan.net>",
   "description": "AirTunes v2 Music Server",
   "contributors": [
@@ -10,7 +10,7 @@
     }
   ],
   "scripts": {
-    "test": "node ./test/server.js"
+    "test": "node ./examples/server.js"
   },
   "repository": {
     "type": "git",
