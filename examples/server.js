@@ -8,6 +8,10 @@ var speaker = new Speaker({
   bitDepth: 16,
   sampleRate: 44100
 });
-var server = new AirTunesServer(speaker);
+var server = new AirTunesServer();
+
+server.on('clientConnected', function(audioStream) {
+	audioStream.pipe(speaker);
+});
 
 server.start();
