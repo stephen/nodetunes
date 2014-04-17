@@ -1,5 +1,4 @@
 "use strict";
-
 var AirTunesServer = require('../index');
 var Speaker = require('speaker');
 
@@ -8,7 +7,7 @@ var speaker = new Speaker({
   bitDepth: 16,
   sampleRate: 44100
 });
-var server = new AirTunesServer();
+var server = new AirTunesServer({ serverName: 'NodeTunes Speaker'});
 
 server.on('clientConnected', function(audioStream) {
 	audioStream.pipe(speaker);

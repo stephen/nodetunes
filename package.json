@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/StephenCWan/nodetunes.git"
+    "url": "https://github.com/stephen/nodetunes.git"
   },
   "dependencies": {
     "mdns2": "*",
