@@ -13,7 +13,7 @@ See ```examples/server.js``` for example usage.
 Changelog
 ---------
 
-##### 0.0.8
+##### 0.0.9
 - Fixed scope leakage issues
 
 ##### 0.0.7
