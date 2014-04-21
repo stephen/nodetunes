@@ -24,7 +24,7 @@
     "priorityqueuejs": "*",
     "portastic": "*",
     "randomstring": "*",
-    "httplike": "0.0.1",
+    "httplike": "0.0.4",
     "random-mac": "0.0.4"
   },
   "devDependencies": {
