@@ -29,7 +29,12 @@
     "metricstream": "0.0.0"
   },
   "devDependencies": {
-    "speaker": "*"
+    "speaker": "*",
+    "gulp": "~3.6.2",
+    "gulp-mocha": "~0.4.1",
+    "gulp-jshint": "~1.5.5",
+    "mocha": "~1.18.2",
+    "jshint-stylish": "~0.2.0"
   },
   "license": "MIT"
 }
