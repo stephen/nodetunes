@@ -1,3 +1,3 @@
 "use strict";
 
-module.exports = require(__dirname + '/lib/start.js');
+module.exports = require(__dirname + '/lib/server');

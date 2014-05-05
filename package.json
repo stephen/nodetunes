@@ -1,6 +1,6 @@
 {
   "name": "nodetunes",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "author": "Stephen Wan <stephen@stephenwan.net>",
   "description": "AirTunes v2 Music Server",
   "contributors": [
@@ -24,7 +24,7 @@
     "priorityqueuejs": "*",
     "portastic": "*",
     "randomstring": "*",
-    "httplike": "0.0.4",
+    "httplike": "0.0.7",
     "random-mac": "0.0.4",
     "metricstream": "0.0.0"
   },
