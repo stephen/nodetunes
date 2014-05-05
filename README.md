@@ -15,6 +15,7 @@ Changelog
 
 ##### 0.0.12
 - EXPERIMENTAL - added testing infrastructure, refactoring.
+- Moved to httplike v0.0.7 (trim on method support, solves )
 
 ##### 0.0.11
 - Fixed 'undefined' bug in RTSP replies
