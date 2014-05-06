@@ -1,6 +1,6 @@
 {
   "name": "nodetunes",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "author": "Stephen Wan <stephen@stephenwan.net>",
   "description": "AirTunes v2 Music Server",
   "contributors": [
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "start": "node ./examples/server.js",
-    "test": "mocha"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "priorityqueuejs": "*",
     "portastic": "*",
     "randomstring": "*",
-    "httplike": "0.0.7",
+    "httplike": "0.0.4",
     "random-mac": "0.0.4",
     "metricstream": "0.0.0"
   },
@@ -34,7 +34,8 @@
     "gulp-mocha": "~0.4.1",
     "gulp-jshint": "~1.5.5",
     "mocha": "~1.18.2",
-    "jshint-stylish": "~0.2.0"
+    "jshint-stylish": "~0.2.0",
+    "request": "~2.34.0"
   },
   "license": "MIT"
 }
