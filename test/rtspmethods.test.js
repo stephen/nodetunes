@@ -14,6 +14,7 @@ describe('RTSP Methods', function() {
     'XyE3eg0NsB/IrmqKIrV9Q==';
   var rsaAesIv = 'VkH+lhtE7jGkV5rUPM64aQ==';
   var codec = '96 L16/44100/2';
+  var macAddress = '5F513885F785';
 
   var server = null;
   var port = -1;
@@ -21,13 +22,15 @@ describe('RTSP Methods', function() {
   var parser = new Parser(client);
 
   beforeEach(function(done) {    
+
     client = new net.Socket();
     parser = new Parser(client);
-    server = new Nodetunes({ macAddress: '5F513885F785' });
+    server = new Nodetunes({ macAddress: madAddress });
     server.start(function(err, d) {
       port = d.port;
       done();
     });
+
   });
 
   // tests
@@ -36,22 +39,21 @@ describe('RTSP Methods', function() {
 
     it('should should only allow one client', function(done) {
 
+      var secondClient = new net.Socket();
+      var secondParser = new Parser(secondClient);
 
-      parser.on('message', function(m) {
-        assert(m.statusCode === 200);
-        assert(server.rtspServer.audioCodec === codec);
-        assert(server.rtspServer.audioAesKey.toString('base64') === helper.rsaOperations.decrypt(new Buffer(rsaAesKey, 'base64')).toString('base64'));
-        assert(server.rtspServer.audioAesIv.toString('base64') === rsaAesIv);
+      secondParser.on('message', function(m) {
+        assert(m.statusCode === 453);
+        assert(m.statusMessage === 'NOT ENOUGH BANDWIDTH');
         done();
       });
 
       client.connect(port, 'localhost', function() {
+        client.write('OPTIONS * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + content.length + '\r\n\r\n' + content);
+      });
 
-        var content = 'v=0\r\no=AirTunes 7709564614789383330 0 IN IP4 172.17.104.138\r\ns=AirTunes\r\n' +
-          'i=Stephen\'s iPad\r\nc=IN IP4 172.17.104.138\r\nt=0 0\r\nm=audio 0 RTP/AVP 96\r\na=rtpmap:' + codec + '\r\n' +
-          'a=rsaaeskey:' + rsaAesKey + '\r\na=aesiv:' + rsaAesIv + '\r\na=min-latency:11025\r\na=max-latency:88200';
-
-        client.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + content.length + '\r\n\r\n' + content);
+      secondClient.connect(port, 'localhost', function() {
+        client.write('OPTIONS * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + content.length + '\r\n\r\n' + content);
       });
 
     });
