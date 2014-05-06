@@ -8,7 +8,10 @@
       "name": "Stephen Wan",
       "email": "stephen@stephenwan.net"
     }
-  ],
+  ],  
+  "engines": {
+    "node": "0.10.x"
+  },
   "scripts": {
     "start": "node ./examples/server.js",
     "test": "gulp test"
