@@ -21,11 +21,11 @@ MessageData.prototype.getHeader = function(header) {
 var parseHeader = function(header) {
   var lines = header.split(LINE_TERMINATOR);
 
-  var methodline = lines[0].trim();
+  var methodline = lines[0].trim().split(' ');
 
-  var protocol = methodline.split(' ')[0];
-  var statusCode = methodline.split(' ')[1];
-  var statusMessage = methodline.split(/.+ .+ /g)[1];
+  var protocol = methodline[0];
+  var statusCode = methodline[1];
+  var statusMessage = methodline.slice(2, methodline.length).join(' ');
   var output = {};
 
   output.protocol = protocol;

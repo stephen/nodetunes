@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var mocha = require('gulp-mocha');
 var jshint = require('gulp-jshint');
 
-gulp.task('default', function () {
+gulp.task('test', function () {
 	gulp.src('./test/*.js')
 		.pipe(mocha({reporter: 'spec' }));
 
@@ -11,3 +11,5 @@ gulp.task('default', function () {
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(jshint.reporter('fail'));
 });
+
+gulp.task('default', ['test']);
