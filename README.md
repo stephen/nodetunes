@@ -1,5 +1,7 @@
 NodeTunes
 =========
+[![build status](https://secure.travis-ci.org/stephen/nodetunes.png)](http://travis-ci.org/stephen/nodetunes)
+
 
 AirTunes v2 implementation in node.js
 
