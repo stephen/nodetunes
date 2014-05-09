@@ -1,7 +1,7 @@
 var net = require('net');
 var assert = require('assert');
 var Nodetunes = require('../index');
-var Parser = require('./clientParser');
+var Parser = require('httplike').ClientParser;
 var helper = require('../lib/helper');
 
 describe('RTSP Methods', function() {
@@ -63,7 +63,7 @@ describe('RTSP Methods', function() {
 
     });
 
-    it('should should only allow one client', function(done) {
+    it('should only allow one client', function(done) {
 
       var secondClient = new net.Socket();
       var secondParser = new Parser(secondClient);
@@ -78,11 +78,12 @@ describe('RTSP Methods', function() {
       client.connect(port, 'localhost', function() {
 
         client.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
-      });
 
-      secondClient.connect(port, 'localhost', function() {
 
-        secondClient.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
+        secondClient.connect(port, 'localhost', function() {
+
+          secondClient.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
+        });
       });
 
     });
