@@ -9,8 +9,8 @@ var speaker = new Speaker({
 });
 var server = new AirTunesServer({ serverName: 'NodeTunes Speaker'});
 
-server.on('clientConnected', function(audioStream) {
-	audioStream.pipe(speaker);
+server.on('clientConnected', function(stream) {
+	stream.pipe(speaker);
 });
 
 server.start();

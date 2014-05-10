@@ -181,20 +181,29 @@ describe('RTSP Methods', function() {
   describe('SETUP', function() {
 
     it('should respond with setup acknowledgement (TODO)', function(done) {
+      var counter = 0;
 
       parser.on('message', function(m) {
+        counter++;
         assert(m.statusCode === 200);
+
         // TODO: check client ports saved on server
-        assert(server.rtspServer.ports.length === 3);
-        assert(typeof server.rtspServer.ports[0] === 'number');
-        assert(typeof server.rtspServer.ports[1] === 'number');
-        assert(typeof server.rtspServer.ports[2] === 'number');
-        done();
+        if (counter == 1) {
+          client.write('SETUP * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nTransport:RTP/AVP/UDP;unicast;mode=record;timing_port=56631;x-events;control_port=62727\r\n\r\n');
+
+        } else if (counter == 2) {
+          assert(server.rtspServer.ports.length === 3);
+          assert(typeof server.rtspServer.ports[0] === 'number');
+          assert(typeof server.rtspServer.ports[1] === 'number');
+          assert(typeof server.rtspServer.ports[2] === 'number');
+          client.destroy();
+          done();
+        }
       });
 
       client.connect(port, 'localhost', function() {
 
-        client.write('SETUP * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nTransport:RTP/AVP/UDP;unicast;mode=record;timing_port=56631;x-events;control_port=62727\r\n\r\n');
+        client.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
       });
 
     });

@@ -15,6 +15,11 @@ See ```examples/server.js``` for example usage.
 Changelog
 ---------
 
+##### 0.0.14
+- Solved issues created in 0.0.12
+- Fixed clientConnected/clientDisconnected issues
+- Correct cleanup for RTP binding
+
 ##### 0.0.12
 - EXPERIMENTAL - added testing infrastructure, refactoring.
 - Moved to httplike v0.0.7 (trim on method support, solves )
