@@ -15,7 +15,7 @@ See ```examples/server.js``` for example usage.
 Changelog
 ---------
 
-##### 0.0.15
+##### 0.0.16
 - Added support for fetching human-readable client name
 
 ##### 0.0.14
