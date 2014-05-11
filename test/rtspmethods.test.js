@@ -133,6 +133,7 @@ describe('RTSP Methods', function() {
         assert(server.rtspServer.audioCodec === codec);
         assert(server.rtspServer.audioAesKey.toString('base64') === helper.rsaOperations.decrypt(new Buffer(rsaAesKey, 'base64')).toString('base64'));
         assert(server.rtspServer.audioAesIv.toString('base64') === rsaAesIv);
+        assert(server.rtspServer.metadata.clientName === 'Stephen\'s iPad');
         done();
       });
 
@@ -140,7 +141,6 @@ describe('RTSP Methods', function() {
 
         client.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
       });
-
     });
 
     it('should respond with password required (TODO)', function(done) {
