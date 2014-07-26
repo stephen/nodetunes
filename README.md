@@ -2,8 +2,7 @@ NodeTunes
 =========
 [![build status](https://secure.travis-ci.org/stephen/nodetunes.png)](http://travis-ci.org/stephen/nodetunes)
 
-
-AirTunes v2 implementation in node.js
+`nodetunes` is an implementation of the Apple AirTunes v2 (audio AirPlay) protocol written in node.js.
 
 ```
 npm install
