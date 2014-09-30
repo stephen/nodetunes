@@ -13,6 +13,11 @@ See ```examples/server.js``` for example usage.
 Changelog
 ---------
 
+##### 0.0.17
+- Fixed bug where unknown request method (e.g. `GET`) would crash session
+- Removed legacy `MessageBuilder` responses
+- Fixed buggy response errors to use `httplike` errors
+
 ##### 0.0.16
 - Added support for fetching human-readable client name
 
