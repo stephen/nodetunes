@@ -29,7 +29,8 @@
     "randomstring": "1.0.3",
     "httplike": "0.0.8",
     "random-mac": "0.0.4",
-    "metricstream": "0.0.0"
+    "metricstream": "0.0.0",
+    "bufferstream": "0.6.2"
   },
   "devDependencies": {
     "speaker": "0.2.1",
