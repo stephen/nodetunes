@@ -21,15 +21,16 @@
     "url": "https://github.com/stephen/nodetunes.git"
   },
   "dependencies": {
-    "mdns": "2.2.0",
-    "ursa": "0.8.0",
-    "ip": "0.3.2",
-    "priorityqueuejs": "0.2.0",
-    "portastic": "0.0.1",
-    "randomstring": "1.0.3",
+    "forge": "^2.2.0",
     "httplike": "0.0.8",
+    "ip": "0.3.2",
+    "mdns": "2.2.0",
+    "metricstream": "0.0.0",
+    "node-forge": "^0.6.16",
+    "portastic": "0.0.1",
+    "priorityqueuejs": "0.2.0",
     "random-mac": "0.0.4",
-    "metricstream": "0.0.0"
+    "randomstring": "1.0.3"
   },
   "devDependencies": {
     "speaker": "0.2.1",
