@@ -1,6 +1,9 @@
 Changelog
 ---------
 
+##### 0.0.19
+- Removed dependency on ursa package.
+
 ##### 0.0.18
 - Locked down dependencies, moved to mdns package
 

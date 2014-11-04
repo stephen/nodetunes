@@ -1,8 +1,8 @@
 {
   "name": "nodetunes",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "author": "Stephen Wan <stephen@stephenwan.net>",
-  "description": "AirTunes v2 Music Server",
+  "description": "AirTunes v2 Server Implementation",
   "contributors": [
     {
       "name": "Stephen Wan",
