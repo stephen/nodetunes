@@ -25,7 +25,7 @@ describe('RTSP Methods', function() {
   var client = new net.Socket();
   var parser = new Parser(client);
 
-  beforeEach(function(done) {    
+  beforeEach(function(done) {
     client = new net.Socket();
     parser = new Parser(client);
     server = new Nodetunes({ macAddress: macAddress });
@@ -94,7 +94,7 @@ describe('RTSP Methods', function() {
 		it('should respond with available method options', function(done) {
 
 			parser.on('message', function(m) {
-				assert(m.protocol === 'RTSP/1.0');        
+				assert(m.protocol === 'RTSP/1.0');
         assert(m.statusCode === 200);
         assert(m.statusMessage === 'OK');
 				assert(m.getHeader('Server') === 'AirTunes/105.1');
@@ -131,7 +131,7 @@ describe('RTSP Methods', function() {
       parser.on('message', function(m) {
         assert(m.statusCode === 200);
         assert(server.rtspServer.audioCodec === codec);
-        assert(server.rtspServer.audioAesKey.toString('base64') === helper.rsaOperations.decrypt(new Buffer(rsaAesKey, 'base64')).toString('base64'));
+        assert(server.rtspServer.audioAesKey.toString('base64') === helper.rsaPrivateKey.decrypt(new Buffer(rsaAesKey, 'base64').toString('binary'), 'RSA-OAEP').toString('base64'));
         assert(server.rtspServer.audioAesIv.toString('base64') === rsaAesIv);
         assert(server.rtspServer.metadata.clientName === 'Stephen\'s iPad');
         done();
@@ -148,7 +148,7 @@ describe('RTSP Methods', function() {
       parser.on('message', function(m) {
         assert(m.statusCode === 200);
         assert(server.rtspServer.audioCodec === codec);
-        assert(server.rtspServer.audioAesKey.toString('base64') === helper.rsaOperations.decrypt(new Buffer(rsaAesKey, 'base64')).toString('base64'));
+        assert(server.rtspServer.audioAesKey.toString('base64') === helper.rsaPrivateKey.decrypt(new Buffer(rsaAesKey, 'base64').toString('binary'), 'RSA-OAEP').toString('base64'));
         assert(server.rtspServer.audioAesIv.toString('base64') === rsaAesIv);
         done();
       });
@@ -165,7 +165,7 @@ describe('RTSP Methods', function() {
       parser.on('message', function(m) {
         assert(m.statusCode === 200);
         assert(server.rtspServer.audioCodec === codec);
-        assert(server.rtspServer.audioAesKey.toString('base64') === helper.rsaOperations.decrypt(new Buffer(rsaAesKey, 'base64')).toString('base64'));
+        assert(server.rtspServer.audioAesKey.toString('base64') === helper.rsaPrivateKey.decrypt(new Buffer(rsaAesKey, 'base64').toString('binary'), 'RSA-OAEP').toString('base64'));
         assert(server.rtspServer.audioAesIv.toString('base64') === rsaAesIv);
         done();
       });
