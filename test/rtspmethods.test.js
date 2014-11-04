@@ -299,7 +299,7 @@ describe('RTSP Methods', function() {
         assert(m.statusCode === 200);
         done();
       });
-      
+
       var content = 'bawkbawk';
 
       client.connect(port, 'localhost', function() {
@@ -314,7 +314,7 @@ describe('RTSP Methods', function() {
         assert(m.statusCode === 200);
         done();
       });
-      
+
       var content = 'bawkbawk';
 
       client.connect(port, 'localhost', function() {
