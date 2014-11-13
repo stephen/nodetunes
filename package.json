@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "forge": "^2.2.0",
-    "httplike": "0.0.8",
+    "httplike": "1.0.1",
     "ip": "0.3.2",
     "mdns": "2.2.0",
     "metricstream": "0.0.0",

@@ -52,7 +52,9 @@ describe('RTSP Methods', function() {
       parser.on('message', function(m) {
         assert(m.getHeader('CSeq') === '' + x);
         x++;
-        done();
+        if (x === 100) {
+          done();
+        }
       });
 
       client.connect(port, 'localhost', function() {
