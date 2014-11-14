@@ -21,6 +21,7 @@
     "url": "https://github.com/stephen/nodetunes.git"
   },
   "dependencies": {
+    "debug": "^2.1.0",
     "forge": "^2.2.0",
     "httplike": "1.0.1",
     "ip": "0.3.2",
