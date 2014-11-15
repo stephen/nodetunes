@@ -267,9 +267,10 @@ describe('RTSP Methods', function() {
 
       parser.on('message', function(m) {
         assert(m.statusCode === 200);
+        assert.equal(m.content.toString(), 'volume: -22.500000');
         done();
       });
-      var content = 'volume'
+      var content = 'volume';
 
       client.connect(port, 'localhost', function() {
         client.write('GET_PARAMETER * RTSP/1.0\r\nCSeq:2\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + content.length + '\r\n\r\n' + content);
