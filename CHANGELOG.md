@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-##### 0.0.23
+##### 0.1.0
 - Upgraded to httplike 1.0.1
 - Added option for verbose output
 - Added disconnect timeout (see #8)
