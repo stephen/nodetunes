@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+##### 0.0.20
+- Upgraded to httplike 1.0.1
+- Added option for verbose output
+- Added disconnect timeout (see #8)
+
 ##### 0.0.19
 - Removed dependency on ursa package.
 
@@ -22,7 +27,7 @@ Changelog
 
 ##### 0.0.12
 - EXPERIMENTAL - added testing infrastructure, refactoring.
-- Moved to httplike v0.0.7 (trim on method support, solves )
+- Moved to httplike v0.0.7 (trim on method support)
 
 ##### 0.0.11
 - Fixed 'undefined' bug in RTSP replies
