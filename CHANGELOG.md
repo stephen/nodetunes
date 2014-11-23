@@ -1,6 +1,9 @@
 Changelog
 ---------
 
+##### 0.1.1
+- Added verbose output for Apple Challenge creation
+
 ##### 0.1.0
 - Upgraded to httplike 1.0.1
 - Added option for verbose output
