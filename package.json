@@ -31,7 +31,8 @@
     "portastic": "0.0.1",
     "priorityqueuejs": "0.2.0",
     "random-mac": "0.0.4",
-    "randomstring": "1.0.3"
+    "randomstring": "1.0.3",
+    "libalac":"0.1.0"
   },
   "devDependencies": {
     "speaker": "0.2.1",
