@@ -34,7 +34,7 @@
     "randomstring": "1.0.3"
   },
   "devDependencies": {
-    "speaker": "0.2.1",
+    "speaker": "0.2.5",
     "gulp": "~3.6.2",
     "gulp-mocha": "~0.4.1",
     "gulp-jshint": "~1.5.5",
