@@ -4,12 +4,12 @@ var jshint = require('gulp-jshint');
 
 gulp.task('test', function () {
 	gulp.src('./test/*.js')
-		.pipe(mocha({reporter: 'spec' }));
+		.pipe(mocha({ reporter: 'spec' }));
 
-    gulp.src('./lib/*.js')
-        .pipe(jshint({ "node" : true }))
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(jshint.reporter('fail'));
+  gulp.src('./lib/*.js')
+      .pipe(jshint({ node : true }))
+      .pipe(jshint.reporter('jshint-stylish'))
+      .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('default', ['test']);

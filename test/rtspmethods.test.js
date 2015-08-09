@@ -71,8 +71,8 @@ describe('RTSP Methods', function() {
       var secondParser = new Parser(secondClient);
 
       secondParser.on('message', function(m) {
-        assert(m.statusCode === 453);
-        assert(m.statusMessage.toUpperCase() === 'NOT ENOUGH BANDWIDTH');
+        assert.equal(m.statusCode, 453);
+        assert.equal(m.statusMessage.toUpperCase(), 'NOT ENOUGH BANDWIDTH');
         secondClient.end();
         done();
       });
