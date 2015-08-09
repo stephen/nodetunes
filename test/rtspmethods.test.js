@@ -115,7 +115,6 @@ describe('RTSP Methods', function() {
 
       parser.on('message', function(m) {
         assert(m.statusCode === 200);
-        //console.log(m.getHeader('Apple-Response'));
         done();
       });
 
