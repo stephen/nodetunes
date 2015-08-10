@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "node ./examples/server.js",
-    "test": "./node_modules/.bin/gulp test"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   "dependencies": {
     "debug": "^2.1.0",
     "forge": "^2.2.0",
-    "httplike": "1.0.2",
+    "httplike": "^1.0.2",
     "ipaddr.js": "^1.0.1",
     "mdns": "2.2.2",
     "metricstream": "0.0.0",
