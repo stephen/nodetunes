@@ -81,10 +81,10 @@ describe('RTSP Methods', function() {
 
         client.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
 
-
-        secondClient.connect(port, 'localhost', function() {
-
-          secondClient.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
+        parser.on('message', function(m) {
+          secondClient.connect(port, 'localhost', function() {
+            secondClient.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
+          });
         });
       });
 
