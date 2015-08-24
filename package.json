@@ -34,13 +34,12 @@
     "randomstring": "1.0.3"
   },
   "devDependencies": {
-    "speaker": "0.2.5",
     "gulp": "~3.6.2",
+    "gulp-jscs": "^2.0.0",
     "gulp-mocha": "~0.4.1",
-    "gulp-jshint": "~1.5.5",
     "mocha": "~1.18.2",
-    "jshint-stylish": "~0.2.0",
-    "request": "~2.34.0"
+    "request": "~2.34.0",
+    "speaker": "0.2.5"
   },
   "license": "MIT"
 }
