@@ -4,3 +4,7 @@ before_install:
   - sudo apt-get install -y libavahi-compat-libdnssd-dev libasound2-dev
 node_js:
   - "0.10"
+  - "0.12"
+cache:
+  directories:
+    - node_modules
