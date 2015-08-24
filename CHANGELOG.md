@@ -1,9 +1,13 @@
 Changelog
 ---------
 
+##### 0.2.0
+- Added support for node 0.12.x
+- Added jscs airbnb checking to build process
+
 ##### 0.1.2
 - Updated to mdns 2.2.2 (completes 0.11.x support)
-- Added warning/disconncet for unsupported codecs (non-PCM)
+- Added warning/disconnect for unsupported codecs (non-PCM)
 
 ##### 0.1.1
 - Added verbose output for Apple Challenge creation
