@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+##### 0.2.1
+- Bumped mdns version
+- Added support for node 4.0.0
+
 ##### 0.2.0
 - Added support for node 0.12.x
 - Added jscs airbnb checking to build process
