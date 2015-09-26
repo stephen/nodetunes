@@ -71,8 +71,8 @@ describe('RTSP Methods', function() {
       var secondParser = new Parser(secondClient);
 
       secondParser.on('message', function(m) {
-        assert(m.statusCode === 453);
-        assert(m.statusMessage.toUpperCase() === 'NOT ENOUGH BANDWIDTH');
+        assert.equal(m.statusCode, 453);
+        assert.equal(m.statusMessage.toUpperCase(), 'NOT ENOUGH BANDWIDTH');
         secondClient.end();
         done();
       });
@@ -81,41 +81,40 @@ describe('RTSP Methods', function() {
 
         client.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
 
-
-        secondClient.connect(port, 'localhost', function() {
-
-          secondClient.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
+        parser.on('message', function(m) {
+          secondClient.connect(port, 'localhost', function() {
+            secondClient.write('ANNOUNCE * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + announceContent.length + '\r\n\r\n' + announceContent);
+          });
         });
       });
 
     });
   });
 
-	describe('OPTIONS', function() {
+  describe('OPTIONS', function() {
 
-		it('should respond with available method options', function(done) {
+    it('should respond with available method options', function(done) {
 
-			parser.on('message', function(m) {
-				assert(m.protocol === 'RTSP/1.0');
+      parser.on('message', function(m) {
+        assert(m.protocol === 'RTSP/1.0');
         assert(m.statusCode === 200);
         assert(m.statusMessage === 'OK');
-				assert(m.getHeader('Server') === 'AirTunes/105.1');
-				assert(m.getHeader('CSeq') === '0');
-				assert(m.getHeader('Public') === 'ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET')
-				done();
-			});
+        assert(m.getHeader('Server') === 'AirTunes/105.1');
+        assert(m.getHeader('CSeq') === '0');
+        assert(m.getHeader('Public') === 'ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET');
+        done();
+      });
 
-			client.connect(port, 'localhost', function() {
-				client.write('OPTIONS * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\n\r\n');
-			});
+      client.connect(port, 'localhost', function() {
+        client.write('OPTIONS * RTSP/1.0\r\nCSeq:0\r\nUser-Agent: AirPlay/190.9\r\n\r\n');
+      });
 
-		});
+    });
 
     it('should respond with to options with apple challenge response (TODO)', function(done) {
 
       parser.on('message', function(m) {
         assert(m.statusCode === 200);
-        //console.log(m.getHeader('Apple-Response'));
         done();
       });
 
@@ -124,7 +123,7 @@ describe('RTSP Methods', function() {
       });
 
     });
-	});
+  });
 
   describe('ANNOUNCE', function() {
 
@@ -269,7 +268,8 @@ describe('RTSP Methods', function() {
         assert(m.statusCode === 200);
         done();
       });
-      var content = 'volume'
+
+      var content = 'volume';
 
       client.connect(port, 'localhost', function() {
         client.write('GET_PARAMETER * RTSP/1.0\r\nCSeq:2\r\nUser-Agent: AirPlay/190.9\r\nContent-Length:' + content.length + '\r\n\r\n' + content);

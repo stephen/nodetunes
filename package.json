@@ -1,6 +1,6 @@
 {
   "name": "nodetunes",
-  "version": "0.1.2",
+  "version": "0.2.1",
   "author": "Stephen Wan <stephen@stephenwan.net>",
   "description": "AirTunes v2 Server Implementation",
   "contributors": [
@@ -10,7 +10,7 @@
     }
   ],
   "engines": {
-    "node": "0.10.x"
+    "node": "0.12.x"
   },
   "scripts": {
     "start": "node ./examples/server.js",
@@ -23,9 +23,9 @@
   "dependencies": {
     "debug": "^2.1.0",
     "forge": "^2.2.0",
-    "httplike": "1.0.1",
-    "ip": "0.3.2",
-    "mdns": "2.2.2",
+    "httplike": "^1.0.2",
+    "ipaddr.js": "^1.0.1",
+    "mdns": "^2.2.10",
     "metricstream": "0.0.0",
     "node-forge": "^0.6.16",
     "portastic": "0.0.1",
@@ -35,13 +35,12 @@
     "libalac":"0.1.0"
   },
   "devDependencies": {
-    "speaker": "0.2.1",
     "gulp": "~3.6.2",
+    "gulp-jscs": "^2.0.0",
     "gulp-mocha": "~0.4.1",
-    "gulp-jshint": "~1.5.5",
     "mocha": "~1.18.2",
-    "jshint-stylish": "~0.2.0",
-    "request": "~2.34.0"
+    "request": "~2.34.0",
+    "speaker": "0.2.5"
   },
   "license": "MIT"
 }
