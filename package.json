@@ -21,6 +21,7 @@
     "url": "https://github.com/stephen/nodetunes.git"
   },
   "dependencies": {
+    "alac2pcm": "^1.0.1",
     "debug": "^2.1.0",
     "forge": "^2.2.0",
     "httplike": "^1.0.2",
@@ -32,7 +33,7 @@
     "priorityqueuejs": "0.2.0",
     "random-mac": "0.0.4",
     "randomstring": "1.0.3",
-    "libalac":"0.1.0"
+    "readable-stream": "^2.0.2"
   },
   "devDependencies": {
     "gulp": "~3.6.2",
