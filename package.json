@@ -21,7 +21,7 @@
     "url": "https://github.com/stephen/nodetunes.git"
   },
   "dependencies": {
-    "alac2pcm": "^1.1.0-beta.0",
+    "alac2pcm": "^1.1.0",
     "debug": "^2.1.0",
     "forge": "^2.2.0",
     "httplike": "^1.0.2",
