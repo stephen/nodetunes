@@ -1,6 +1,9 @@
 Changelog
 ---------
 
+##### 0.3.0
+- Added support for ALAC encoding (iOS 9, OS X El Capitan)
+
 ##### 0.2.1
 - Bumped mdns version
 - Added support for node 4.0.0
