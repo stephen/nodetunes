@@ -1,5 +1,6 @@
 var net = require('net');
 var assert = require('assert');
+var daap = require('node-daap');
 var Nodetunes = require('../index');
 var Parser = require('httplike').ClientParser;
 var helper = require('../lib/helper');
@@ -295,29 +296,18 @@ describe('RTSP Methods', function() {
 
     });
 
-    it('should set and acknowedge text metadata (TODO)', function(done) {
+    it('handles "metadataChange"', function(done) {
+      server.on('metadataChange', function(data){
+        assert.equal(data.asal, "Album Name");
+        assert.equal(data.asar, "Artist");
+        assert.equal(data.minm, "Track Name");
+        done()
+      })
 
-      parser.on('message', function(m) {
-        assert(m.statusCode === 200);
-        done();
-      });
-
-      var content = 'bawkbawk';
-
-      client.connect(port, 'localhost', function() {
-        client.write('SET_PARAMETER * RTSP/1.0\r\nCSeq:2\r\nUser-Agent: AirPlay/190.9\r\nContent-Type:application/x-dmap-tagged\r\nContent-Length:' + content.length + '\r\n\r\n' + content);
-      });
-
-    });
-
-    it('should set and acknowedge album metadata (TODO)', function(done) {
-
-      parser.on('message', function(m) {
-        assert(m.statusCode === 200);
-        done();
-      });
-
-      var content = 'bawkbawk';
+      var name = daap.encode('minm', 'Track Name')
+      var artist = daap.encode('asar', 'Artist')
+      var album = daap.encode('asal', 'Album Name')
+      var content = daap.encodeList('mlit', name, artist, album)
 
       client.connect(port, 'localhost', function() {
         client.write('SET_PARAMETER * RTSP/1.0\r\nCSeq:2\r\nUser-Agent: AirPlay/190.9\r\nContent-Type:application/x-dmap-tagged\r\nContent-Length:' + content.length + '\r\n\r\n' + content);
