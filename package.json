@@ -28,6 +28,7 @@
     "ipaddr.js": "^1.0.1",
     "mdns": "^2.2.10",
     "metricstream": "0.0.0",
+    "node-daap": "^1.0.3",
     "node-forge": "^0.6.16",
     "portastic": "0.0.1",
     "priorityqueuejs": "0.2.0",
