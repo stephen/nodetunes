@@ -23,7 +23,6 @@
   "dependencies": {
     "alac2pcm": "^1.1.0",
     "debug": "^2.1.0",
-    "forge": "^2.2.0",
     "httplike": "^1.0.2",
     "ipaddr.js": "^1.0.1",
     "mdns": "^2.2.10",
